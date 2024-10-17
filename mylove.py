@@ -41,8 +41,11 @@ if 'start' in st.session_state:
 
     # Sidebar Navigation
     st.sidebar.title("Navigate our Journey")
-    navigation = st.sidebar.radio("Go to", ["🌸 Our Beginning", "📷 Polaroid Gallery", "🍽️ Our Foodie Adventures", 
-                                            "💌 Love Notes", "💘 How Well Do You Know Us?", "🔗 Forever Bound"])
+    navigation = st.sidebar.radio(
+                                "Go to",
+                                ["🌸 Our Beginning", "📷 Polaroid Gallery", "🍽️ Our Foodie Adventures", "👩‍❤️‍👨 Cutie Dates",
+                                 "💌 Love Notes", "💘 How Well Do You Know Us?", "🔗 Forever Bound"]
+                                )
 
     # Introduction Page - Our Beginning
     def introduction():
@@ -58,22 +61,6 @@ if 'start' in st.session_state:
         this website is a little journal of our love story. I want you to know how much I appreciate and love you. ❤️
         
         Here's a journey through our relationship. Enjoy reminiscing about our favorite memories and the love we've built. 
-        """)
-
-    # First Date Page - First Glance
-    def first_date():
-        st.title("🌹 First Glance")
-        
-        st.write("**Our first date was the beginning of something magical.**")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.image("photos/IMG_9399.JPG", caption="On our way to our first date")
-        with col2:
-            st.image("photos/IMG_4845.JPG", caption="Sharing moments together")
-
-        st.write("""
-        That first date was filled with butterflies and excitement. I'll always remember how we laughed, talked, and got to know each other better.
         """)
 
     # Polaroid Gallery
@@ -122,7 +109,33 @@ if 'start' in st.session_state:
             st.image("photos/IMG_3456.JPG", caption="September 09, 2024")
         with col2:
             st.image("photos/IMG_4416.JPG", caption="First delivered food by Andreeee! Appreciate it so much🥰!")
+    
+    # Cutie Dates Page 
+    def cute_date():
+        st.title("👩‍❤️‍👨 Cutie Dates")
         
+        st.write("**To more dates together with you Dree!!!**")
+
+        header_image = Image.open("photos/IMG_0093.JPG")  # Add your header image path here
+        st.image(header_image, caption="First Photobooth!", use_column_width=True)
+        header_image = Image.open("photos/IMG_0936.JPG")  
+        st.image(header_image, caption="First Trip Together!", use_column_width=True)
+        header_image = Image.open("photos/IMG_1615.JPG")  
+        st.image(header_image, caption="First at Tops!", use_column_width=True)
+        header_image = Image.open("photos/IMG_2438.JPG")  
+        st.image(header_image, caption="First Arcade!", use_column_width=True)
+        header_image = Image.open("photos/IMG_2493.JPG")  
+        st.image(header_image, caption="First Movie Date!", use_column_width=True)
+        header_image = Image.open("photos/IMG_3252.JPG")  
+        st.image(header_image, caption="First Long Ride!", use_column_width=True)
+        header_image = Image.open("photos/IMG_2707.JPG")  
+        st.image(header_image, caption="First Ukay Together!", use_column_width=True)
+        header_image = Image.open("photos/IMG_3880.JPG")  
+        st.image(header_image, caption="First Mass Together!", use_column_width=True)
+        header_image = Image.open("photos/IMG_3902.JPG")  
+        st.image(header_image, caption="First Jogging!", use_column_width=True)
+
+
 
     # Love Notes Page - Hidden Love Messages
     def love_notes():
@@ -167,36 +180,20 @@ if 'start' in st.session_state:
 def endgame_message():
     st.title("🔗 Forever Bound")
 
-    # Insert a local video that can be played
-    try:
-        # Open the video file from the local path
-        with open('videos/our_love_video.mp4', 'rb') as video_file:  # Update this path to your local file
-            video_bytes = video_file.read()
-        
-        # Display the video in the Streamlit app
-        st.video(video_bytes, format="video/mp4")
-
-        # Provide a download button for the video
-        st.download_button(
-            label="Download this video",
-            data=video_bytes,
-            file_name="Our_Memory_Video.mp4",
-            mime="video/mp4"
-        )
-    except FileNotFoundError:
-        st.error("Video not found. Please check the file path and ensure the video is in the correct folder.")
-
+    st.video("https://youtu.be/Rq4e3Mv6OX4?si=d8-iBc0qeAk56VW2")
+    
     # Display the message after the video
-        st.write("**Hiii Dreeeeeeeeeeeeeeeeeeeeeeee!!!!!!**")
-        st.write("""
-            I’m literally getting butterflies while making this for you WAAAAAAAAAAAAAHHH AHHAHAHAHA! boang mn diay ko HAHAHAH 😣. Anyway, for the past 4 months I’ve been observing you, I  decided to take the risk wholeheartedly now. Even though we’ve been acting like partners for months, I admit I haven’t given my all yet, so you better prepare! Charot! AHHAHAHA. Jokes aside, I appreciate everything you’ve done and proven. You’ve been consistent and true to your words, keeping your promises and standing by what you’ve said. Thank you for being so honest and genuine I really felt it. Even though we haven’t known each other for long, you trusted me and shared your personal and relationship life without hesitation. I didn’t expect you to share your experiences because no one has ever shared a similar story like yours. I had doubts about continuing with you, I'm afraid that I might just be one of “them,” bc brooooo, I don’t want games or temporary sh*t. I disregarded all my negative thoughts and took the chance to get to know you. I wasn’t ready to be interested in anyone again as I realized that I still have a lot to learn and work on. But despite that, I followed where happiness led me. I tried resisting, but guess what I still replied to you, and look where it took us.
-            Thank you for taking care of me Dree! you make me want to be babied all the time. My independent alpha self just wants to give in when I’m around you. Special thanks to your sincerity it made me ready to love and trust a man again <33333. Thank you for letting me experience your love, my love ❤. You bring out all the hidden sides of me. I hope you’ll have long patience for me, especially during times when I’m dumb, dramatic, or when I haven’t shown enough care, and how numb my feelings will be. One thing’s for sure, though I will always choose you. Please bear with me till the end. I don’t need a man, but for you, I’ll make an exception. Your worth will always be valued, and I will forever be grateful for your existence!! Whatever happens, I hope we continue choosing each other and never break our trust. Let’s work through this together👫. There are innumerable "I love yous" that were left unsaid by me. Thank you for patiently waiting for me, DREEE!! I LOVE YOU TO THE MOON AND BACK, MY BOYFRIEND, ANDREEEEEE!!! 💞
-        """)
+    st.write("**Hiii Dreeeeeeeeeeeeeeeeeeeeeeee!!!!!!**")
+    st.write("""
+        I’m literally getting butterflies while making this for you WAAAAAAAAAAAAAHHH AHHAHAHAHA! boang mn diay ko HAHAHAH 😣. Anyway, for the past 4 months I’ve been observing you, I  decided to take the risk wholeheartedly now. Even though we’ve been acting like partners for months, I admit I haven’t given my all yet, so you better prepare! Charot! AHHAHAHA. Jokes aside, I appreciate everything you’ve done and proven. You’ve been consistent and true to your words, keeping your promises and standing by what you’ve said. Thank you for being so honest and genuine I really felt it. Even though we haven’t known each other for long, you trusted me and shared your personal and relationship life without hesitation. I didn’t expect you to share your experiences because no one has ever shared a similar story like yours. I had doubts about continuing with you, I'm afraid that I might just be one of “them,” bc brooooo, I don’t want games or temporary sh*t. I disregarded all my negative thoughts and took the chance to get to know you. I wasn’t ready to be interested in anyone again as I realized that I still have a lot to learn and work on. But despite that, I followed where happiness led me. I tried resisting, but guess what I still replied to you, and look where it took us.
+        Thank you for taking care of me Dree! you make me want to be babied all the time. My independent alpha self just wants to give in when I’m around you. Special thanks to your sincerity it made me ready to love and trust a man again <33333. Thank you for letting me experience your love, my love ❤. You bring out all the hidden sides of me. I hope you’ll have long patience for me, especially during times when I’m dumb, dramatic, or when I haven’t shown enough care, and how numb my feelings will be. One thing’s for sure, though I will always choose you. Please bear with me till the end. I don’t need a man, but for you, I’ll make an exception. Your worth will always be valued, and I will forever be grateful for your existence!! Whatever happens, I hope we continue choosing each other and never break our trust. Let’s work through this together👫. There are innumerable "I love yous" that were left unsaid by me. Thank you for patiently waiting for me, DREEE!! I LOVE YOU TO THE MOON AND BACK, MY BOYFRIEND, ANDREEEEEE!!! 💞
+    """)
 
     st.write("**Let's make a lifetime of memories together.**")
 
     # Display heart confetti using snow effect
     st.snow()  # Simulates a light confetti effect, which can resemble falling hearts
+
 
 # Main navigation logic
 if navigation == "🌸 Our Beginning":
@@ -205,9 +202,13 @@ elif navigation == "📷 Polaroid Gallery":
     polaroid_gallery()
 elif navigation == "🍽️ Our Foodie Adventures":
     eatwell()
+elif navigation == "👩‍❤️‍👨 Cutie Dates":
+    cute_date()
 elif navigation == "💌 Love Notes":
     love_notes()
 elif navigation == "💘 How Well Do You Know Us?":
     love_quiz()
 elif navigation == "🔗 Forever Bound":
     endgame_message()
+
+
