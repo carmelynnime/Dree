@@ -51,7 +51,7 @@ if 'start' in st.session_state:
     def introduction():
         st.title("🌸 Our Beginning")
         
-        header_image = Image.open("photos/ey.JPG")  # Add your header image path here
+        header_image = Image.open("photos/ey.jpg")  # Add your header image path here
         st.image(header_image, use_column_width=True)
 
         st.write("""
